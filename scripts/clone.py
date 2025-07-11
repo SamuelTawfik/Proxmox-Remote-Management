@@ -363,14 +363,15 @@ if args.create_bridge:
 			print('Writing configuration changes to new configuration file')
 			interfaces = root.find('interfaces')
 			last = interfaces[len(interfaces)-1]
+			
+			# ---  commented to avoid error
+			# num = 0
+			# if last.tag.startswith('opt'):
+			# 	num = int(last.tag[3:])+1
+			# new_name = 'opt' + str(num)
 
-			num = 0
-			if last.tag.startswith('opt'):
-				num = int(last.tag[3:])+1
-			new_name = 'opt' + str(num)
-
-			last.tail = '\n\t\t'
-			new = subelement(interfaces, new_name, text='\n\t\t\t', tail='\n\t')
+			# last.tail = '\n\t\t'
+			# new = subelement(interfaces, new_name, text='\n\t\t\t', tail='\n\t')
 
 			netaddr, subnet = args.bridge_subnet.split('/')
 			ipaddr = args.firewall_ip if args.firewall_ip else netaddr[:-1] + str(int(netaddr[-1:])+1)
