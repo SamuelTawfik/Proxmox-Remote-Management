@@ -369,6 +369,10 @@ if args.create_bridge:
 			# if last.tag.startswith('opt'):
 			# 	num = int(last.tag[3:])+1
 			# new_name = 'opt' + str(num)
+			
+			# if last.tag.startswith('lan'):
+			#	num = 1
+			# new_name = 'opt' + str(num)
 
 			# last.tail = '\n\t\t'
 			# new = subelement(interfaces, new_name, text='\n\t\t\t', tail='\n\t')
